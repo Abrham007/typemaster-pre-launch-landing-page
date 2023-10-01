@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #162542;
+  --gray: #e8eff2;
+}
+
+@mixin tablet {
+  @media screen and (max-width: 800px) {
+    
+  }
+
+}
+
+@mixin button($bg-color, $fg-color, $pad-y: 16px, $pad-x: 26px) {
+  padding: $pad-y $pad-x;
+  border-radius: 8px;
+  background-color: $bg-color;
+  color: $fg-color;
+  border: none;
+  font-weight: bold;
+  line-height: 26px;
+  text-transform: uppercase;
+}
+
+main {
+  width: 100%;
+  height: 1870px;
+  padding: 55px 165px;
+}
+
+.main__header {
+  width: 100%;
+  height: 58px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  &__img {
+    align-self: center;
+  }
+  &__btn {
+    @include button(var(--gray), var(--blue));
+  }
+  &__btn:hover {
+    @include button(var(--blue), var(--gray));
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 800px) {
+  main {
+    padding: 40px;
+  }
+}
+@media screen and (max-width: 400px) {
+  main {
+    padding: 24px;
+  }
+  .header__btn {
+    @include button(var(--gray), var(--blue), $pad-y: 11px, $pad-x: 14px);
+  }
+}
