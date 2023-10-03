@@ -1,0 +1,79 @@
+/*<<< -------------- Css Reset ------------>>>*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// <<< -------------- Variables ------------>>>
+
+$gray: #e8eff2;
+$blue: #162542;
+$light-blue: #7b8bad;
+$orange: #f16718;
+$light-orange: #ff9b62;
+
+// <<< -------------- Media query Mixins ------------>>>
+
+@mixin phone {
+  @media (max-width: 400px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 800px) {
+    @content;
+  }
+}
+
+/*<<< -------------- Base h1-h3 and p------------>>>*/
+h1 {
+  color: $blue;
+  font-size: 56px;
+  font-weight: bold;
+  line-height: 56px;
+  text-transform: uppercase;
+  @include tablet {
+    font-size: 48px;
+    line-height: 48px;
+  }
+}
+p {
+  color: $light-blue;
+  line-height: 26px;
+  @include tablet {
+    font-size: 16px;
+  }
+}
+
+/*<<< -------------- Button commponents ------------>>>*/
+
+.btn {
+  padding: 16px 26px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  line-height: 26px;
+  text-transform: uppercase;
+  cursor: pointer;
+  &--primary {
+    background-color: $gray;
+    color: $blue;
+    &:hover {
+      background-color: $blue;
+      color: $gray;
+    }
+  }
+  &--secondary {
+    background-color: $orange;
+    color: white;
+    &:hover {
+      background-color: $light-orange;
+      color: white;
+    }
+  }
+  @include phone {
+    padding: 11px 14px;
+  }
+}

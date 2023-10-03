@@ -1,68 +1,91 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@use "base";
 
-:root {
-  --blue: #162542;
-  --gray: #e8eff2;
-}
+/* <<<----------- Main layout ------------>>> */
 
-@mixin tablet {
-  @media screen and (max-width: 800px) {
-    
-  }
-
-}
-
-@mixin button($bg-color, $fg-color, $pad-y: 16px, $pad-x: 26px) {
-  padding: $pad-y $pad-x;
-  border-radius: 8px;
-  background-color: $bg-color;
-  color: $fg-color;
-  border: none;
-  font-weight: bold;
-  line-height: 26px;
-  text-transform: uppercase;
-}
-
-main {
+.main {
   width: 100%;
   height: 1870px;
   padding: 55px 165px;
+  &__header {
+    width: 100%;
+    height: 58px;
+    margin-bottom: 83px;
+  }
+  &__heroes {
+    width: 100%;
+    height: 480px;
+    @include base.tablet {
+      height: 425px;
+    }
+  }
+  @include base.tablet {
+    padding: 40px;
+  }
+  @include base.phone {
+    padding: 24px;
+  }
 }
 
-.main__header {
-  width: 100%;
-  height: 58px;
-}
+/* <<<----------- Header Section ------------>>> */
 
 .header {
   display: flex;
   justify-content: space-between;
 
-  &__img {
+  &__logo {
     align-self: center;
   }
-  &__btn {
-    @include button(var(--gray), var(--blue));
-  }
-  &__btn:hover {
-    @include button(var(--blue), var(--gray));
-    cursor: pointer;
-  }
 }
-@media screen and (max-width: 800px) {
-  main {
-    padding: 40px;
+
+/* <<<----------- Heroes Section ------------>>> */
+
+.heroes {
+  $self: &;
+  display: flex;
+  gap: 70px;
+  justify-content: space-between;
+
+  &__text {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 445px;
+    height: 312px;
+    @include base.tablet {
+      flex-shrink: 0;
+      width: 345px;
+    }
+
+    #{ $self }__p {
+      font-size: 18px;
+
+      &--small {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 16px;
+      }
+    }
+
+    #{ $self }__btn {
+      width: 100%;
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      gap: 35px;
+    }
   }
-}
-@media screen and (max-width: 400px) {
-  main {
-    padding: 24px;
-  }
-  .header__btn {
-    @include button(var(--gray), var(--blue), $pad-y: 11px, $pad-x: 14px);
+  &__img {
+    background: url(../desktop/image-keyboard.jpg) no-repeat 0 0/ 540px;
+    height: 100%;
+    width: 540px;
+    border-radius: 20px;
+
+    @include base.tablet {
+      position: relative;
+      min-width: 600px;
+      background: url(../tablet/image-keyboard.jpg) no-repeat 0 0/ 478px 425px;
+    }
   }
 }
