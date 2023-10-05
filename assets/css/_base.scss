@@ -6,12 +6,11 @@
 }
 
 // <<< -------------- Variables ------------>>>
-
-$gray: #e8eff2;
-$blue: #162542;
-$light-blue: #7b8bad;
-$orange: #f16718;
-$light-orange: #ff9b62;
+$primary: #162542;
+$secondary: #e8eff2;
+$tertiary: #f16718;
+$light-primary: #7b8bad;
+$light-tertiary: #ff9b62;
 
 // <<< -------------- Media query Mixins ------------>>>
 
@@ -29,7 +28,7 @@ $light-orange: #ff9b62;
 
 /*<<< -------------- Base h1-h3 and p------------>>>*/
 h1 {
-  color: $blue;
+  color: $primary;
   font-size: 56px;
   font-weight: bold;
   line-height: 56px;
@@ -39,8 +38,15 @@ h1 {
     line-height: 48px;
   }
 }
+h2 {
+  color: $primary;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 36px;
+  text-transform: uppercase;
+}
 p {
-  color: $light-blue;
+  color: $light-primary;
   line-height: 26px;
   @include tablet {
     font-size: 16px;
@@ -58,18 +64,18 @@ p {
   text-transform: uppercase;
   cursor: pointer;
   &--primary {
-    background-color: $gray;
-    color: $blue;
+    background-color: $secondary;
+    color: $primary;
     &:hover {
-      background-color: $blue;
-      color: $gray;
+      background-color: $primary;
+      color: $secondary;
     }
   }
   &--secondary {
-    background-color: $orange;
+    background-color: $tertiary;
     color: white;
     &:hover {
-      background-color: $light-orange;
+      background-color: $light-tertiary;
       color: white;
     }
   }
