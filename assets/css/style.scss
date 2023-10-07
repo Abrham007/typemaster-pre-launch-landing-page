@@ -15,17 +15,20 @@
 
   &__heroes {
     width: 100%;
-    height: 480px;
     margin-bottom: 47px;
 
-    @include base.tablet {
-      height: 425px;
+    @include base.phone {
+      margin-bottom: 20px;
     }
   }
 
   &__jumbotron {
     width: 100%;
-    height: 480px;
+    margin-bottom: 168px;
+  }
+
+  &__feature {
+    width: 100%;
   }
 
   @include base.tablet {
@@ -51,11 +54,15 @@
 /* <<<----------- Heroes Section ------------>>> */
 
 .heroes {
-  $self: &;
   display: flex;
   gap: 70px;
   justify-content: space-between;
   height: max-content;
+  // flex-wrap: wrap;
+
+  @include base.tablet {
+    flex-wrap: nowrap;
+  }
 
   @include base.phone {
     flex-direction: column;
@@ -73,39 +80,41 @@
       flex-shrink: 0;
       width: 345px;
     }
+  }
+  &__p {
+    font-size: 18px;
 
-    #{ $self }__p {
-      font-size: 18px;
-
-      &--small {
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: 16px;
-      }
+    &--small {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 16px;
     }
+  }
 
-    #{ $self }__btn {
-      width: 100%;
-      margin-top: auto;
-      display: flex;
-      align-items: center;
-      flex-shrink: 0;
-      gap: 35px;
-    }
+  &__btn {
+    width: 100%;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 35px;
   }
   &__img {
     background: url(../desktop/image-keyboard.jpg) no-repeat 0 0/ 540px 480px;
     width: 540px;
+    height: 480px;
     border-radius: 20px;
 
     @include base.tablet {
       background: url(../tablet/image-keyboard.jpg) no-repeat 0 0/ 478px 425px;
       min-width: 478px;
+      height: 425px;
     }
 
     @include base.phone {
       background: url(../mobile/image-keyboard.jpg) no-repeat 0 0/ 372px 331px;
       min-height: 331px;
+      height: 331px;
     }
   }
 }
@@ -116,6 +125,8 @@
   $self: &;
   display: flex;
   justify-content: space-between;
+  gap: 50px;
+  flex-wrap: wrap;
 
   @include base.tablet {
     gap: 72px;
@@ -127,7 +138,12 @@
     gap: 30px;
     height: 480px;
 
+    @include base.tablet {
+      height: 320px;
+    }
+
     @include base.phone {
+      height: 193px;
       gap: 20px;
       margin-left: -45px;
     }
@@ -149,7 +165,7 @@
       @include base.phone {
         background-image: url(../mobile/image-phone-and-keyboard.jpg);
         background-size: 129px 193px;
-        min-width: 129px;
+        width: 129px;
       }
     }
 
@@ -180,8 +196,8 @@
 
     @include base.tablet {
       flex-direction: row;
-      align-items: center;
       align-self: flex-start;
+
       width: 100%;
       gap: 36px;
     }
@@ -194,3 +210,35 @@
 }
 
 /* <<<----------- Features Section ------------>>> */
+
+.feature {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 255px;
+
+    @include base.phone {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+    }
+  }
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    background-color: base.$tertiary;
+    border-radius: 16px;
+    margin-bottom: 24px;
+  }
+}

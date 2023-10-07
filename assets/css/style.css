@@ -28,6 +28,14 @@ h2 {
   text-transform: uppercase;
 }
 
+h3 {
+  color: #162542;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 28px;
+  text-transform: uppercase;
+}
+
 p {
   color: #7b8bad;
   line-height: 26px;
@@ -83,17 +91,19 @@ p {
 }
 .main__heroes {
   width: 100%;
-  height: 480px;
   margin-bottom: 47px;
 }
-@media (max-width: 800px) {
+@media (max-width: 400px) {
   .main__heroes {
-    height: 425px;
+    margin-bottom: 20px;
   }
 }
 .main__jumbotron {
   width: 100%;
-  height: 480px;
+  margin-bottom: 168px;
+}
+.main__feature {
+  width: 100%;
 }
 @media (max-width: 800px) {
   .main {
@@ -122,6 +132,11 @@ p {
   justify-content: space-between;
   height: max-content;
 }
+@media (max-width: 800px) {
+  .heroes {
+    flex-wrap: nowrap;
+  }
+}
 @media (max-width: 400px) {
   .heroes {
     flex-direction: column;
@@ -141,15 +156,15 @@ p {
     width: 345px;
   }
 }
-.heroes__text .heroes__p {
+.heroes__p {
   font-size: 18px;
 }
-.heroes__text .heroes__p--small {
+.heroes__p--small {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 16px;
 }
-.heroes__text .heroes__btn {
+.heroes__btn {
   width: 100%;
   margin-top: auto;
   display: flex;
@@ -160,18 +175,21 @@ p {
 .heroes__img {
   background: url(../desktop/image-keyboard.jpg) no-repeat 0 0/540px 480px;
   width: 540px;
+  height: 480px;
   border-radius: 20px;
 }
 @media (max-width: 800px) {
   .heroes__img {
     background: url(../tablet/image-keyboard.jpg) no-repeat 0 0/478px 425px;
     min-width: 478px;
+    height: 425px;
   }
 }
 @media (max-width: 400px) {
   .heroes__img {
     background: url(../mobile/image-keyboard.jpg) no-repeat 0 0/372px 331px;
     min-height: 331px;
+    height: 331px;
   }
 }
 
@@ -179,6 +197,8 @@ p {
 .jumbotron {
   display: flex;
   justify-content: space-between;
+  gap: 50px;
+  flex-wrap: wrap;
 }
 @media (max-width: 800px) {
   .jumbotron {
@@ -191,8 +211,14 @@ p {
   gap: 30px;
   height: 480px;
 }
+@media (max-width: 800px) {
+  .jumbotron__img-box {
+    height: 320px;
+  }
+}
 @media (max-width: 400px) {
   .jumbotron__img-box {
+    height: 193px;
     gap: 20px;
     margin-left: -45px;
   }
@@ -215,7 +241,7 @@ p {
   .jumbotron__img-box .jumbotron__img-1 {
     background-image: url(../mobile/image-phone-and-keyboard.jpg);
     background-size: 129px 193px;
-    min-width: 129px;
+    width: 129px;
   }
 }
 .jumbotron__img-box .jumbotron__img-2 {
@@ -245,7 +271,6 @@ p {
 @media (max-width: 800px) {
   .jumbotron__text {
     flex-direction: row;
-    align-items: center;
     align-self: flex-start;
     width: 100%;
     gap: 36px;
@@ -259,5 +284,36 @@ p {
 }
 
 /* <<<----------- Features Section ------------>>> */
+.feature {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.feature__item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 255px;
+}
+@media (max-width: 400px) {
+  .feature__item {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+}
+.feature__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  background-color: #f16718;
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
 
 /*# sourceMappingURL=style.css.map */
