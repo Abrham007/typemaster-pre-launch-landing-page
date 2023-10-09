@@ -28,6 +28,10 @@ body {
   &__jumbotron {
     width: 100%;
     margin-bottom: 168px;
+
+    @include base.phone {
+      margin-bottom: 111px;
+    }
   }
 
   &__feature {
@@ -231,7 +235,7 @@ body {
     gap: 24px;
     width: 255px;
 
-    @include base.phone {
+    @include base.custom(650px) {
       align-items: center;
       justify-content: center;
       text-align: center;
