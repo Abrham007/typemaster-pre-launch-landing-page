@@ -26,6 +26,12 @@ $light-tertiary: #ff9b62;
   }
 }
 
+@mixin custom($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
 /*<<< -------------- Base h1-h3 and p------------>>>*/
 h1 {
   color: $primary;

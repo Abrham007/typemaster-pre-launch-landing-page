@@ -62,11 +62,15 @@ body {
   justify-content: space-between;
   height: max-content;
 
+  @include base.custom(1050px) {
+    flex-wrap: wrap;
+  }
+
   @include base.tablet {
     flex-wrap: nowrap;
   }
 
-  @include base.phone {
+  @include base.custom(700px) {
     flex-direction: column;
   }
 
@@ -198,15 +202,14 @@ body {
     width: 255px;
     align-self: center;
 
-    @include base.tablet {
+    @include base.custom(1370px) {
       flex-direction: row;
       align-self: flex-start;
-
       width: 100%;
       gap: 36px;
     }
 
-    @include base.phone {
+    @include base.custom(550px) {
       flex-direction: column;
       text-align: center;
     }
