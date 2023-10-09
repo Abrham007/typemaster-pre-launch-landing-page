@@ -23,7 +23,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [solution URL](https://github.com/typemaster-pre-launch-landing-page.git)
+- Solution URL: [solution URL](https://github.com/Abrham007/typemaster-pre-launch-landing-page.git)
 - Live Site URL: [live site URL](https://abrham007.github.io/typemaster-pre-launch-landing-page/)
 
 ## My process
@@ -33,7 +33,7 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- Grid
+- Scss
 
 ## Author
 
