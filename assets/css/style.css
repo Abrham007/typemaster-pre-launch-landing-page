@@ -100,6 +100,12 @@ body {
 .main {
   width: 100%;
   padding: 55px 165px;
+  background: url(../shared/pattern-square.svg) no-repeat 1305px 196px, url(../shared/pattern-square.svg) no-repeat -120px 950px;
+}
+@media (max-width: 800px) {
+  .main {
+    background: none;
+  }
 }
 .main__header {
   width: 100%;
